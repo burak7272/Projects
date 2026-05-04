@@ -1,0 +1,226 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1Wg1c2wTx2nxHfIUUjfcjd-gka6PV-WpjyfqLZgEJkmg",
+          "mode": "list",
+          "cachedResultName": " Operasyonel_Verim_Analizi ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Wg1c2wTx2nxHfIUUjfcjd-gka6PV-WpjyfqLZgEJkmg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sayfa1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Wg1c2wTx2nxHfIUUjfcjd-gka6PV-WpjyfqLZgEJkmg/edit#gid=0"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "26210d28-b1f8-4476-a848-c05a65be94e9",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "zQBxPBmX5oBAQhsT",
+          "name": "Google Sheets Trigger OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-5",
+          "mode": "list",
+          "cachedResultName": "GPT-5"
+        },
+        "responses": {
+          "values": [
+            {
+              "content": "=Sen endüstriyel bir veri analistisin. Sana gelen şu makine verilerini analiz et:\n\nSıcaklık: {{ $json.Sicaklik }} °C\n\nHata Sayısı: {{ $json.Hata_Sayisi }}\n\nEnerji Tüketimi: {{ $json.Enerji_Tuketimi }} kWh\n\nBu verilere dayanarak makinenin toplam verimlilik skorunu (OEE benzeri) %0 ile %100 arasında hesapla. Tahminini yaparken yüksek sıcaklık ve hata sayısının verimliliği düşürdüğünü göz önünde bulundur.\nSADECE tek bir tam sayı döndür (Örneğin: 85). Başka hiçbir metin veya açıklama ekleme"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "fbcfabd7-230e-4f7c-8649-9114239faa84",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1Wg1c2wTx2nxHfIUUjfcjd-gka6PV-WpjyfqLZgEJkmg",
+          "mode": "list",
+          "cachedResultName": " Operasyonel_Verim_Analizi ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Wg1c2wTx2nxHfIUUjfcjd-gka6PV-WpjyfqLZgEJkmg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sayfa1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Wg1c2wTx2nxHfIUUjfcjd-gka6PV-WpjyfqLZgEJkmg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Cihaz_ID": "={{ $node[\"Google Sheets Trigger\"].json.Cihaz_ID }}",
+            "Verimlilik_Tahmini": "={{ $json.output[0].content[0].text }}"
+          },
+          "matchingColumns": [
+            "Cihaz_ID"
+          ],
+          "schema": [
+            {
+              "id": "Cihaz_ID",
+              "displayName": "Cihaz_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Sicaklik",
+              "displayName": "Sicaklik",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Hata_Sayisi",
+              "displayName": "Hata_Sayisi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Enerji_Tuketimi",
+              "displayName": "Enerji_Tuketimi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Verimlilik_Tahmini",
+              "displayName": "Verimlilik_Tahmini",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        560,
+        0
+      ],
+      "id": "ea3e9994-bc32-4e64-811e-63533b7a6abd",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "w5qhEMfbC1nwVhQ3",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "78e6553a-8f4d-4f3d-a3b6-c0b1e2e28ef3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "19a6f140e27850642923e3e943d8feb266c9da99d468cfab242b99b5eb1fb34b"
+  },
+  "id": "UbH6TOTcnwoUnpBo",
+  "tags": []
+}
