@@ -1,29 +1,27 @@
 # 🚀 Engineering Portfolio | Burak Tunç
-
-Bu depo, Kastamonu Üniversitesi Bilgisayar Mühendisliği eğitimim süresince geliştirdiğim ileri düzey yazılım projelerini, akademik çalışmalarımı ve teknik araştırmalarımı içermektedir.
-
-## 🛡️ Featured Project: Velox Security Suite
+## 🛡️ Featured Project: Velox Security Suite 
 **Siber Güvenlik ve Statik Analiz Aracı**
 
 Windows PE (Portable Executable) dosyaları üzerinde derinlemesine statik analiz yapan, C++17 standartlarında geliştirilmiş bir güvenlik aracıdır.
 
-*   **Multi-threaded Scanning:** `std::async` kütüphanesi kullanılarak optimize edilmiş, yüksek performanslı paralel klasör tarama motoru.
-*   **Security Hardening Check:** ASLR (Address Space Layout Randomization), DEP/NX (Data Execution Prevention) ve CFG (Control Flow Guard) gibi kritik güvenlik korumalarının otomatik doğrulanması.
-*   **Heuristic API Analysis:** Zararlı yazılım belirtisi olabilecek WinAPI çağrılarının (Process Injection, Remote Thread Creation vb.) gelişmiş tespiti.
-*   **Risk Scoring:** Özel bir matematiksel algoritma üzerinden dosyaların güvenlik skorunun (0-100%) hesaplanması ve görsel risk analizi.
+*   **Multi-threaded Scanning:** `std::async` kütüphanesi kullanılarak optimize edilmiş paralel klasör tarama motoru.
+*   **Security Hardening Check:** ASLR, DEP/NX ve CFG gibi kritik güvenlik korumalarının otomatik doğrulanması.
+*   **Heuristic API Analysis:** Zararlı yazılım belirtisi olabilecek WinAPI çağrılarının (Process Injection vb.) tespiti.
+*   **Risk Scoring:** Özel bir matematiksel algoritma üzerinden dosyaların güvenlik skorunun hesaplanması.
 
 ## 📚 Proje Listesi
 
 | Proje / Klasör | Teknoloji | Açıklama |
 | :--- | :--- | :--- |
-| `Velox-Security/` | C++, Win32 API | PE Header analizi ve siber güvenlik skorlama aracı. |
-| `VeloxOS/` | C, Assembly | Özel kernel mimarisi ve sistem simülasyonu üzerine kurulu işletim sistemi projesi. |
-| `Turkish-Lang/` | C# | Türkçe sözdizimine (syntax) sahip interpreter ve compiler simülasyonu. |
+| `Velox-Security/` | C++, Win32 API | **Ödev 3:** PE Header analizi ve siber güvenlik skorlama aracı. |
+| `Workflow-Automation/` | n8n, Low-Code | **Ödev 2:** n8n kullanılarak hazırlanan otomasyon ve API entegrasyon projesi. |
+| `BurGame/` | C++, Game Dev | **Ödev 1:** OOP prensipleriyle geliştirilmiş C++ tabanlı oyun projesi. |
 
 ## 🛠️ Teknik Yetkinlikler
-*   **Diller:** C++, C#, C, Assembly (x86), Java.
+*   **Diller:** C++, C#, C, Java.
+*   **Otomasyon:** n8n Workflow Automation.
 *   **Frameworkler:** ASP.NET Core, .NET Entity Framework.
-*   **İlgi Alanları:** Sistem Programlama, Siber Güvenlik, Finansal Piyasalar (Price Action & Technical Analysis).
+*   **İlgi Alanları:** Sistem Programlama, Siber Güvenlik, Finansal Piyasalar.
 
 ## 👤 Geliştirici
 **Burak Tunç**  
@@ -31,5 +29,3 @@ Windows PE (Portable Executable) dosyaları üzerinde derinlemesine statik anali
 📍 Istanbul / Kastamonu  
 🔗 [GitHub](https://github.com/burak7272) 
 
-## 📝 Lisans
-Bu repodaki içerikler akademik eğitim ve portfolyo amaçlıdır.
