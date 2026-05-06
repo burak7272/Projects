@@ -1,22 +1,30 @@
-# Projects# 📁 Projects
+🚀 Engineering Portfolio | Kastamonu University
+Bu depo, Kastamonu Üniversitesi Bilgisayar Mühendisliği eğitimim süresince geliştirdiğim ileri düzey yazılım projelerini ve akademik çalışmalarımı içermektedir.
 
-Bu repo, Kastamonu Üniversitesi Bilgisayar Mühendisliği bölümü kapsamında tamamlanan yazılım ödevlerini içermektedir.
+🛡️ Featured Project: Velox Security Suite
+Siber Güvenlik ve Statik Analiz Aracı
 
-## 📚 İçerik
+Windows PE (Portable Executable) dosyaları üzerinde derinlemesine statik analiz yapan, C++17 standartlarında geliştirilmiş bir güvenlik aracıdır.
 
-Her klasör ayrı bir ödevi temsil etmektedir. Ödevler eklendikçe bu liste güncellenecektir.
+Multi-threaded Scanning: std::async kullanarak yüksek performanslı klasör tarama.
 
-| Klasör | Açıklama |
-|--------|----------|
-| `Odev1/` | 1. Ödev |
-| `Odev2/` | 2. Ödev |
+Security Hardening Check: ASLR, DEP/NX ve CFG korumalarının otomatik doğrulanması.
 
-## 👤 Geliştirici
+Heuristic API Analysis: Zararlı yazılım belirtisi olabilecek WinAPI çağrılarının (Process Injection vb.) tespiti.
 
-**Burak Tunç**  
-Bilgisayar Mühendisliği — Kastamonu Üniversitesi  
-[github.com/burak7272](https://github.com/burak7272)
+Risk Scoring: Matematiksel bir modelleme üzerinden dosyaların güvenlik skorunun hesaplanması.
+📚 Projeler
+Proje / Klasör	Teknoloji	Açıklama			
+Velox-Security/	C++, Win32 API	PE Header analizi ve siber güvenlik skorlama aracı.			
+VeloxOS/	C, Assembly	Özel kernel mimarisi üzerine kurulu işletim sistemi projesi.			
+Turkish-Lang/	C#	Türkçe sözdizimine sahip interpreter/compiler simülasyonu.			
+🛠️ Teknik Yetkinlikler
+Diller: C++, C#, C, Assembly (x86).
 
-## 📝 Lisans
+İlgi Alanları: Sistem Programlama, Siber Güvenlik, Finansal Piyasalar (Price Action/Technical Analysis).
+👤 Geliştirici
+Burak Tunç
 
-Bu repo yalnızca eğitim amaçlıdır.
+Computer Engineering Student at Kastamonu University
+
+📍 Istanbul / Kastamonu
